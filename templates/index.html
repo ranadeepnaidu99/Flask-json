@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+</head>
+<body>
+    <h1>Todo Tasks</h1>
+    <button type="button"><a href="/add-task">Add New Task</a></button>
+    {% for task in todo %}
+    <ul>
+        <li>
+            Title: {{task.title}} - Task: {{task.task}} - Due: {{task.due}}
+            <a href="{{ url_for('update_task', id=task.id) }}">Edit</a>
+            <a href="{{ url_for('delete_user', id=task.id) }}">Delete</a>
+        </li>
+    </ul>
+    {% endfor %}
+</body>
+</html>
